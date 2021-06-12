@@ -13,7 +13,7 @@ struct AppetizerListCell: View {
     
     var body: some View {
         HStack{
-            Image("steak").resizable().aspectRatio(contentMode: .fit)
+            AppetizerRemoteImage(urlString: appetizer.imageURL).animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/).aspectRatio(contentMode: .fit)
                 .frame(width: 120, height: 90, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).cornerRadius(8)
             VStack(alignment: .leading, spacing: 5) {
                 Text(appetizer.name).font(.title2).fontWeight(.medium)

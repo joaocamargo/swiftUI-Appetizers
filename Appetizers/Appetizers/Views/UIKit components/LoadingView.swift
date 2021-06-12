@@ -1,0 +1,37 @@
+//
+//  LoadingView.swift
+//  Appetizers
+//
+//  Created by joao camargo on 11/06/21.
+//
+
+import Foundation
+import SwiftUI
+import UIKit
+
+
+struct ActivityIndicator: UIViewRepresentable {
+    
+    func makeUIView(context: Context) -> UIActivityIndicatorView {
+        let activityIndicatorView = UIActivityIndicatorView(style: .large)
+        activityIndicatorView.color = UIColor.brandPrimary
+        activityIndicatorView.startAnimating()
+        return activityIndicatorView
+    }
+    
+    func updateUIView(_ uiView: UIActivityIndicatorView, context: Context) {
+        
+    }
+    
+    
+}
+
+
+struct LoadingView: View {
+    var body: some View {
+        ZStack {
+            Color(.systemBackground).edgesIgnoringSafeArea(.all)
+            ActivityIndicator()
+        }
+    }
+}
