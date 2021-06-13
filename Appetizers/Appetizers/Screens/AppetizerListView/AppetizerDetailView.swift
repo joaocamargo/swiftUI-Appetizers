@@ -10,72 +10,84 @@ import SwiftUI
 struct AppetizerDetailView: View {
     
     let appetizer : Appetizer
+    @Binding var isShowingDetail: Bool
+    
     
     var body: some View {
         VStack {
             
             ZStack{
-                //AppetizerRemoteImage(urlString: "foodSample")
-                Image("foodSample").resizable().aspectRatio(contentMode: .fit)
+                AppetizerRemoteImage(urlString: appetizer.imageURL)
+                    //Image("foodSample").resizable()
+                    .aspectRatio(contentMode: .fit)
                     .frame(width: 300, height: 225, alignment: .center).background(Color.red)
-                    .overlay(CloseButton().imageScale(.small).padding(8), alignment: .topTrailing)
+                //                    .overlay(
+                //                        withAnimation(.linear.delay(10)) {
+                //                            CloseButton(isShowingDetail: $isShowingDetail)
+                //                        }.imageScale(.small).padding(8), alignment: .topTrailing)
             }
             
             
-            VStack(spacing: 20) {
-                Text(appetizer.name).font(.title2).fontWeight(.semibold)
-                Text(appetizer.description).multilineTextAlignment(.center).font(.body)
-
+            VStack(spacing: 10) {
+                Text(appetizer.name).font(.title2).fontWeight(.semibold).frame(alignment: .center)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+                Text(appetizer.description).fixedSize(horizontal: false, vertical: true)
+                    .multilineTextAlignment(.leading).font(.body)
+                    .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+                Spacer()
                 HStack(spacing: 40){
-                    VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10) {
-                        Text("Calories").bold().font(.caption)
-                        Text("\(appetizer.calories)").foregroundColor(.secondary).fontWeight(.semibold).italic()
-                    }
-                    
-                    VStack(alignment: .center, spacing: 10) {
-                        Text("Carbs").bold().font(.caption)
-                        Text("\(appetizer.carbs) g").foregroundColor(.secondary).fontWeight(.semibold).italic()
-                    }
-                    
-                    VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10) {
-                        Text("Protein").bold().font(.caption)
-                        Text("\(appetizer.protein) g").foregroundColor(.secondary).fontWeight(.semibold).italic()
-                    }
+                    itemDetails(title: "Calories", value: appetizer.calories)
+                    itemDetails(title: "Carbs", value: appetizer.carbs)
+                    itemDetails(title: "Protein", value: appetizer.protein)
                 }
                 
                 Spacer()
                 Button(action: {
                     
                 }, label: {
-                    Text("$ \(appetizer.price,specifier: "%.2f") - Add To Order").foregroundColor(.white)
-                        .font(.title3).fontWeight(.semibold)
-                        .frame(width:260, height: 50).background(Color.brandPrimary)
-                        .cornerRadius(10)
+                    APButton(title: "$ \(appetizer.price,specifier: "%.2f") - Add To Order")
                 }).padding(.bottom,30)
             }
-        }.frame(width: 300, height:525)
+        }
+        .frame(width: 300, height:525)
         .background(Color(.systemBackground))
         .cornerRadius(12)
         .shadow(radius: 40)
+        .overlay(CloseButton(isShowingDetail: $isShowingDetail),alignment: .topTrailing)
         
     }
 }
 
 struct AppetizerDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        AppetizerDetailView(appetizer: MockData.sampleAppetizer)
+        AppetizerDetailView(appetizer: MockData.sampleAppetizer, isShowingDetail: .constant(true))
     }
 }
 
 struct CloseButton: View {
+    
+    @Binding var isShowingDetail: Bool
+    
     var body: some View {
         Button(action: {
-            
+            isShowingDetail = false
         }, label: {
-            Image(systemName: "xmark").foregroundColor(.black).frame(width: 30, height: 30).background(Color.white.opacity(0.7))
-                .cornerRadius(30)
+            xDismissButton()
         })
     }
 }
 
 
+struct itemDetails: View {
+    
+    @State var title: String
+    @State var value: Int
+    
+    var body: some View {
+        VStack(alignment: .center, spacing: 10) {
+            Text(title).bold().font(.caption)
+            Text("\(value)").foregroundColor(.secondary).fontWeight(.semibold).italic()
+        }
+    }
+}
