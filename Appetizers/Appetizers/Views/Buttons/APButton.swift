@@ -9,7 +9,7 @@ import SwiftUI
 
 struct APButton: View {
     
-    @State var title: LocalizedStringKey
+    var title: LocalizedStringKey
     
     var body: some View {
         Text(title).foregroundColor(.white)
@@ -19,8 +19,8 @@ struct APButton: View {
     }
 }
 
-struct APButton_Previews: PreviewProvider {
-    static var previews: some View {
-        APButton(title: " Add To Order")
-    }
-}
+//struct APButton_Previews: PreviewProvider {
+//    static var previews: some View {
+//        APButton(title: .constant(" Add To Order"))
+//    }
+//}
