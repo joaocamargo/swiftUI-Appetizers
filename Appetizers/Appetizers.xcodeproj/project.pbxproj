@@ -22,6 +22,7 @@
 		057FA8EB2676F27E00228565 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057FA8EA2676F27E00228565 /* AccountViewModel.swift */; };
 		057FA8ED2676F40700228565 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057FA8EC2676F40700228565 /* String+Ext.swift */; };
 		057FA8EF2676F78A00228565 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057FA8EE2676F78A00228565 /* User.swift */; };
+		057FA8F126778A7B00228565 /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057FA8F026778A7B00228565 /* EmptyState.swift */; };
 		059F196D2674EF3D00D45430 /* AppetizerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F196C2674EF3D00D45430 /* AppetizerDetailView.swift */; };
 		059F4A882676B80900E0FCEB /* APButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F4A872676B80900E0FCEB /* APButton.swift */; };
 		059F4A8A2676BA4E00E0FCEB /* xDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F4A892676BA4E00E0FCEB /* xDismissButton.swift */; };
@@ -49,6 +50,7 @@
 		057FA8EA2676F27E00228565 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		057FA8EC2676F40700228565 /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		057FA8EE2676F78A00228565 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		057FA8F026778A7B00228565 /* EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyState.swift; sourceTree = "<group>"; };
 		059F196C2674EF3D00D45430 /* AppetizerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerDetailView.swift; sourceTree = "<group>"; };
 		059F4A872676B80900E0FCEB /* APButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APButton.swift; sourceTree = "<group>"; };
 		059F4A892676BA4E00E0FCEB /* xDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xDismissButton.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				059F196B2674E54500D45430 /* Image */,
 				059F196A2674E53F00D45430 /* Cells */,
 				059F19692674E52E00D45430 /* UIKit components */,
+				057FA8F026778A7B00228565 /* EmptyState.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				050FE3DE26730FDF006C8CA1 /* NetworkManager.swift in Sources */,
 				050A82AA2674DDD20003F33A /* RemoteImage.swift in Sources */,
 				057FA8ED2676F40700228565 /* String+Ext.swift in Sources */,
+				057FA8F126778A7B00228565 /* EmptyState.swift in Sources */,
 				059F196D2674EF3D00D45430 /* AppetizerDetailView.swift in Sources */,
 				0526C55C2672A4E30025F49E /* AppetizerTabView.swift in Sources */,
 				050A82A42673D14D0003F33A /* Alert.swift in Sources */,
