@@ -8,7 +8,7 @@
 import Foundation
 
 struct Appetizer: Decodable, Identifiable {
-    let id: Int
+    var id: Int
     let name: String
     let description: String
     let price: Double
@@ -27,7 +27,18 @@ struct MockData {
     static let sampleAppetizer = Appetizer(id: 0001, name: "Chicken Avocado Spring Roll", description: "this is a descripti ondescr iptiondes cription description  d escrip tionde scription for appetizer",
                                            price: 20.0, imageURL: "", protein: 10, carbs: 20, calories: 300)
     
-    static let appetizer = [sampleAppetizer, sampleAppetizer, sampleAppetizer, sampleAppetizer]
+    static let orderItemOne = Appetizer(id: 0002, name: "Chicken Avocado Spring Roll", description: "this is a descripti ondescr iptiondes cription description  d escrip tionde scription for appetizer",
+                                           price: 20.0, imageURL: "", protein: 10, carbs: 20, calories: 300)
+    
+    static let orderItemTwo = Appetizer(id: 0003, name: "Chicken Avocado Spring Roll", description: "this is a descripti ondescr iptiondes cription description  d escrip tionde scription for appetizer",
+                                           price: 20.0, imageURL: "", protein: 10, carbs: 20, calories: 300)
+    
+    static let orderItemThree = Appetizer(id: 0004, name: "Chicken Avocado Spring Roll", description: "this is a descripti ondescr iptiondes cription description  d escrip tionde scription for appetizer",
+                                           price: 20.0, imageURL: "", protein: 10, carbs: 20, calories: 300)
+    
+    
+    static let appetizer = [sampleAppetizer, orderItemOne, orderItemTwo, orderItemThree]
+    
 }
 
 

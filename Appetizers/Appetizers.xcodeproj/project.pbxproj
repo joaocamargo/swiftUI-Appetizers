@@ -19,6 +19,9 @@
 		0526C55C2672A4E30025F49E /* AppetizerTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526C55B2672A4E30025F49E /* AppetizerTabView.swift */; };
 		0526C55E2672A4E80025F49E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0526C55D2672A4E80025F49E /* Assets.xcassets */; };
 		0526C5612672A4E80025F49E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0526C5602672A4E80025F49E /* Preview Assets.xcassets */; };
+		057FA8EB2676F27E00228565 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057FA8EA2676F27E00228565 /* AccountViewModel.swift */; };
+		057FA8ED2676F40700228565 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057FA8EC2676F40700228565 /* String+Ext.swift */; };
+		057FA8EF2676F78A00228565 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057FA8EE2676F78A00228565 /* User.swift */; };
 		059F196D2674EF3D00D45430 /* AppetizerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F196C2674EF3D00D45430 /* AppetizerDetailView.swift */; };
 		059F4A882676B80900E0FCEB /* APButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F4A872676B80900E0FCEB /* APButton.swift */; };
 		059F4A8A2676BA4E00E0FCEB /* xDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F4A892676BA4E00E0FCEB /* xDismissButton.swift */; };
@@ -43,6 +46,9 @@
 		0526C55D2672A4E80025F49E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0526C5602672A4E80025F49E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0526C5622672A4E80025F49E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		057FA8EA2676F27E00228565 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
+		057FA8EC2676F40700228565 /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		057FA8EE2676F78A00228565 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		059F196C2674EF3D00D45430 /* AppetizerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerDetailView.swift; sourceTree = "<group>"; };
 		059F4A872676B80900E0FCEB /* APButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APButton.swift; sourceTree = "<group>"; };
 		059F4A892676BA4E00E0FCEB /* xDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xDismissButton.swift; sourceTree = "<group>"; };
@@ -126,6 +132,7 @@
 		059F19612674E43800D45430 /* AccountView */ = {
 			isa = PBXGroup;
 			children = (
+				057FA8EA2676F27E00228565 /* AccountViewModel.swift */,
 				05B35A262672A59C00184EE7 /* AccountView.swift */,
 			);
 			path = AccountView;
@@ -160,6 +167,7 @@
 		059F19652674E4D200D45430 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				057FA8EC2676F40700228565 /* String+Ext.swift */,
 				050A82A72673D9890003F33A /* Color+Ext.swift */,
 			);
 			path = Extensions;
@@ -178,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				05B35A2C2673076D00184EE7 /* Appetizer.swift */,
+				057FA8EE2676F78A00228565 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -299,14 +308,17 @@
 				05B35A272672A59C00184EE7 /* AccountView.swift in Sources */,
 				050FE3E226731D47006C8CA1 /* AppetizerListViewModel.swift in Sources */,
 				050FE3E0267310CA006C8CA1 /* APError.swift in Sources */,
+				057FA8EB2676F27E00228565 /* AccountViewModel.swift in Sources */,
 				050FE3DC26730ECE006C8CA1 /* AppetizerListCell.swift in Sources */,
 				050A82A82673D9890003F33A /* Color+Ext.swift in Sources */,
 				05B35A292672A5CF00184EE7 /* OrderView.swift in Sources */,
+				057FA8EF2676F78A00228565 /* User.swift in Sources */,
 				059F4A882676B80900E0FCEB /* APButton.swift in Sources */,
 				050A82A62673D7150003F33A /* LoadingView.swift in Sources */,
 				05B35A2D2673076D00184EE7 /* Appetizer.swift in Sources */,
 				050FE3DE26730FDF006C8CA1 /* NetworkManager.swift in Sources */,
 				050A82AA2674DDD20003F33A /* RemoteImage.swift in Sources */,
+				057FA8ED2676F40700228565 /* String+Ext.swift in Sources */,
 				059F196D2674EF3D00D45430 /* AppetizerDetailView.swift in Sources */,
 				0526C55C2672A4E30025F49E /* AppetizerTabView.swift in Sources */,
 				050A82A42673D14D0003F33A /* Alert.swift in Sources */,

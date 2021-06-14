@@ -9,49 +9,47 @@ import SwiftUI
 
 struct AccountView: View {
     
-    @State private var firstName = ""
-    @State private var lastName = ""
-    @State private var email = ""
-    @State private var birthDate = Date()
-    
-    
+    @StateObject var viewModel = AccountViewModel()
     
     
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("Personal Info")){
-                    TextField("First Name",text: $firstName)
-                    TextField("Last Name",text: $lastName)
-                    TextField("email",text: $email)
-                    DatePicker("Birthday", selection: $birthDate,displayedComponents: [.date])
-                }
-                
-                
-                Section(footer:
-                            Button(action: {
-                                
-                            }, label: {
-                                Text("Save Changes").foregroundColor(.white)
-                                    .font(.title3).fontWeight(.semibold)
-                                    .frame(width: 300, height: 50).background(Color.brandPrimary)
-                                    .cornerRadius(10)
-                            })) {
-                        EmptyView()
-                    }
-                
-                
+                    TextField("First Name",text: $viewModel.user.firstName)
+                    TextField("Last Name",text: $viewModel.user.lastName)
+                    TextField("email",text: $viewModel.user.email)
+                        .keyboardType(.emailAddress)
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
+                    
+                    DatePicker("Birthday", selection: $viewModel.user.birthDate,displayedComponents: [.date])
+                    
+                    HStack(alignment: .center) {
+                        Spacer()
+                        Button(action: {
+                            viewModel.saveChanges()
+                        }, label: {
+                            Text("Save Changes").foregroundColor(.white)
+                                .font(.title3).fontWeight(.semibold)
+                                .frame(width: 300, height: 50).background(Color.brandPrimary)
+                                .cornerRadius(10)
+                        })
+                        Spacer()
+                    }.padding()
+                }        
                 
                 Section(header: Text("Requests")){
-                    Toggle("Extra Napkins", isOn: .constant(false))
-                    Toggle("Frequent Refills", isOn: .constant(false))
-                }
+                    Toggle("Extra Napkins", isOn: $viewModel.user.extraNapkins)
+                    Toggle("Frequent Refills", isOn: $viewModel.user.frequentRefills)
+                } .toggleStyle(SwitchToggleStyle(tint: .brandPrimary))
             }
-            
-            
-            
-           
-        }.navigationTitle("🙋‍♂️ Account")
+            .navigationTitle("🙋‍♂️ Account")
+        }
+        .onAppear(perform: viewModel.retrieveUser)
+        .alert(item: $viewModel.alertItem) { alertItem in
+            Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButon)
+        }
     }
     
 }
